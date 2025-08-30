@@ -1,7 +1,7 @@
 function Card({ url, title }) {
   return (
     <figure className="card">
-      <img className="card__image" src={url} alt={title} />
+      <img className="card__image" src={url} alt={title} loading="lazy" />
       <figcaption className="card__text">{title}</figcaption>
     </figure>
   );
@@ -25,5 +25,9 @@ function ListOfCards({ cards, onClick }) {
 
 export function Cards({ cards, onClick }) {
   const hasResults = cards.length > 0;
-  return hasResults ? <ListOfCards cards={cards} onClick={onClick} /> : <p>No Results</p>;
+  return hasResults ? (
+    <ListOfCards cards={cards} onClick={onClick} />
+  ) : (
+    <p>No Results</p>
+  );
 }

@@ -1,26 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Cards } from "./components/Cards";
-import { useResult } from "./hooks/useResult";
+import { useResponse } from "./hooks/useResponse";
 import "./App.css";
+import { getRandomArray } from "./services/getRandomArray";
+import { driverObj } from "./services/driver";
 
 let idCard = [];
 let bestScore = 0;
 
 function App() {
-  const { result } = useResult();
+  const apiResponse = useResponse();
+
+  const [response, setResponse] = useState([]);
   const [score, setScore] = useState(0);
 
   const handleClick = (id) => {
+    const randomArray = getRandomArray(apiResponse);
+    setResponse(randomArray);
+
     if (idCard.indexOf(id) !== -1) {
       bestScore = score;
       idCard = [];
       setScore(0);
       return;
     }
-      
+
     idCard.push(id);
     setScore(score + 1);
   };
+
+  useEffect(() => {
+    if (apiResponse.length > 0) {
+      driverObj.drive();
+    }
+  }, [apiResponse]);
 
   return (
     <>
@@ -32,7 +45,10 @@ function App() {
         </div>
       </header>
       <main className="main">
-        <Cards cards={result} onClick={handleClick} />
+        <Cards
+          cards={response.length > 0 ? response : apiResponse}
+          onClick={handleClick}
+        />
       </main>
     </>
   );

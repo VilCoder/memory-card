@@ -4,6 +4,40 @@
   margin: 0;
 }
 
+/* ================ DRIVER ================ */
+.driver-popover.driverjs-theme {
+  background-color: #fde047;
+  color: #000;
+}
+
+.driver-popover.driverjs-theme .driver-popover-title {
+  font-size: 20px;
+}
+
+.driver-popover.driverjs-theme .driver-popover-title,
+.driver-popover.driverjs-theme .driver-popover-description,
+.driver-popover.driverjs-theme .driver-popover-progress-text {
+  color: #000;
+}
+
+.driver-popover.driverjs-theme .driver-popover-prev-btn,
+.driver-popover.driverjs-theme .driver-popover-next-btn {
+  padding: 5px 8px;
+  font-size: 14px;
+  background-color: #322D0E;
+  color: #ffffff;
+  text-shadow: none;
+  border-radius: 6px;
+  border: none;
+}
+
+.driver-popover.driverjs-theme .driver-popover-prev-btn:hover,
+.driver-popover.driverjs-theme .driver-popover-next-btn:hover {
+  background-color: #000;
+  color: #fde047;
+}
+
+
 /* ================ HEADER ================ */
 .header {
   display: flex;
@@ -15,10 +49,13 @@
 }
 
 .header__title {
+  margin-block: 0.5rem;
   font-size: 1.7rem;
 }
 
 .score__info {
+  margin: 0;
+  margin-block: 0.3rem;
   font-size: 0.7rem;
 }
 
