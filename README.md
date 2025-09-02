@@ -1,12 +1,64 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🃏 Memory Card Game
 
-Currently, two official plugins are available:
+An interactive memory game built with React.
+The goal is to click on each card only once without repeating any.
+Each correct click increases your score, but if you pick a card twice, your score resets!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tech Stack
+
+- ⚛️ React
+- 🎨 CSS
+- 🛠️ Vite
+
+
+
+## 🎮 Features
+
+- Randomized cards on each round
+- Cards reshuffle after every click
+- Scoring system:
+  - Current Score → number of unique cards selected
+  - Best Score → highest score reached during  the session
+- Automatic reset if a card is clicked twice
+- Responsive design for desktop and mobile
+
+
+## 📸 Screenshot
+
+![App Screenshot](public/app-preview.png)
+
+
+## 🌐 Demo
+
+https://vilcoder-memory-card.vercel.app/
+
+
+## 📦 Run Locally
+
+Clone the project
+
+```bash
+  git@github.com:VilCoder/memory-card.git
+```
+
+Go to the project directory
+
+```bash
+  cd memory-card
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
