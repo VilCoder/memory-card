@@ -1,3 +1,10 @@
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 function Card({ url, title }) {
   return (
     <figure className="card">
@@ -8,8 +15,20 @@ function Card({ url, title }) {
 }
 
 function ListOfCards({ cards, onClick }) {
+  const cardsContainer = useRef();
+
+  useGSAP(
+    () => {
+      gsap.to(".list__item", {
+        opacity: 1,
+        stagger: 0.2,
+      });
+    },
+    { scope: cardsContainer }
+  );
+
   return (
-    <ul className="main__list">
+    <ul ref={cardsContainer} className="main__list">
       {cards?.map((card) => (
         <li
           className="list__item"

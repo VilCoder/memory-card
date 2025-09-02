@@ -10,7 +10,6 @@ let bestScore = 0;
 
 function App() {
   const apiResponse = useResponse();
-
   const [response, setResponse] = useState([]);
   const [score, setScore] = useState(0);
 

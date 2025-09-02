@@ -75,6 +75,7 @@
   border-radius: 10px;
   background-color: var(--foreground-color);
   cursor: pointer;
+  opacity: 0;
   transition: transform 0.3s ease-in-out;
 }
 
